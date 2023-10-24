@@ -2,24 +2,48 @@
 GET  http://localhost:4000/divisas
 
 
-###obtener tasa de  divisa por id
-GET http://localhost:4000/divisas/KRW
-
 ### crear divisas
 POST http://localhost:4000/divisas
-Content-Type: application/json 
+Content-Type: application/json
 
 {
     "id": "KRW",
     "PaisEmisor": "Corea del Sur",
-    "simbolo": "₩",
+    "simbolo": "₩"
 }
 
-POST http://localhost:4000/divisas/tipocambio
+### eliminar divisa
+DELETE http://localhost:4000/divisas/KRW
 
-### actualizar parcialmente divisa
+### actualizar parcialmente Tasa de Cambio
 PATCH http://localhost:4000/divisas
 
-### eliminar divisa
-DELETE http://localhost:4000/divisas
+#-------------------------------------
+
+### obtener tasa de cambio por id
+GET  http://localhost:4000/tasacambio/USD
+
+### crear tasa de cambio
+POST http://localhost:4000/tasacambio
+Content-Type: application/json
+
+{
+    "1":{
+        "idA": "USD",
+        "idB": "KRW",
+        "valor": 1345.6438
+    },
+    "2":{
+        "idA": "EUR",
+        "idB": "KRW",
+        "valor": 1425.0689
+    },
+    "3":{
+        "idA": "COP",
+        "idB": "KRW",
+        "valor": 0.31920
+    }
+}
+
+
 

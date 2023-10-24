@@ -3,7 +3,7 @@ import 'package:divisasback/src/services/DB/postConnection.dart';
 import 'package:zod_validation/zod_validation.dart';
 
 class TasaCambioModel{
-  static getByIdCambio({var id , PostConnection? connection}) async{
+  static Future<dynamic> getByIdCambio({var id , PostConnection? connection}) async{
     final query =await connection?.query('''select * from tasadecambio as t where t.iddivisaapkfk='${id}';''');
     if (query.isEmpty) {
       return {'message': 'No hay Tasas de cambio para la divisa',"statusCode":404};
@@ -12,7 +12,7 @@ class TasaCambioModel{
     
   }
 
-  static create ({Map<String, dynamic>? input, PostConnection? connection , var validate}) async{
+  static Future<dynamic> create ({Map<String, dynamic>? input, PostConnection? connection , var validate}) async{
     var validador=[];
     input?.forEach((key, value) {
       validador.add(Zod.validate(data: value,params: validate).isValid);
@@ -31,7 +31,7 @@ class TasaCambioModel{
     return {'message':"Tasas de cambio creadas","statusCode":201}; 
   }
 
-  static remove ({var id,PostConnection? connection})async{
+  static  Future<dynamic> remove ({var id,PostConnection? connection})async{
     final query1= await connection?.query('''select * from tasadecambio  where iddivisaapkfk='${id}';''');
     if (query1.isEmpty) {
       return {'message': 'No hay Tasas de cambio para la divisa',"statusCode":404};

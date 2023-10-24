@@ -12,7 +12,7 @@ Future configureServer(Angel app) async {
     await app.configure(_TasaCambioController().configureServer);
 }
 
-@Expose('/divas')
+@Expose('/divisas')
 class _DivisasController extends Controller{
 
   final params ={
@@ -23,7 +23,7 @@ class _DivisasController extends Controller{
 
   @Expose('/',method: 'GET')
     Future getAll(RequestContext req, ResponseContext res) async {
-      final data=DivisasModel.getAll(req.container!.make<PostConnection>());
+      final data=await DivisasModel.getAll(req.container!.make<PostConnection>());
       res.json(data);
   }
 
@@ -42,7 +42,7 @@ class _DivisasController extends Controller{
   }
 
   
-  @Expose('/id',method:'DELETE')
+  @Expose('/:id',method:'DELETE')
   Future removeDivisa(RequestContext req, ResponseContext res) async {
     final data = await DivisasModel.remove(id:req.params['id'],connection: req.container?.make<PostConnection>());
     res.statusCode=data['statusCode'];
@@ -63,7 +63,7 @@ class _TasaCambioController extends Controller{
 
   @Expose('/:id',method: 'GET')
   Future getByIdCambio(RequestContext req, ResponseContext res) async {
-    final data=TasaCambioModel.getByIdCambio(id: req.params['id'],connection: req.container?.make<PostConnection>());
+    final data=await TasaCambioModel.getByIdCambio(id: req.params['id'],connection: req.container?.make<PostConnection>());
     res.statusCode=data['statusCode'];
     res.json(data['message']);
   }
