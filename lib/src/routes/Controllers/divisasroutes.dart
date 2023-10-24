@@ -79,7 +79,7 @@ class _TasaCambioController extends Controller{
 
   
 
-  @Expose('/id',method:'DELETE')
+  @Expose('/:id',method:'DELETE')
   Future removeDivisa(RequestContext req, ResponseContext res) async {
     
     final data = await TasaCambioModel.remove(id:req.params['id'],connection: req.container?.make<PostConnection>());

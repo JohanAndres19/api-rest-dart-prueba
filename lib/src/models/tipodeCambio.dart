@@ -32,11 +32,12 @@ class TasaCambioModel{
   }
 
   static  Future<dynamic> remove ({var id,PostConnection? connection})async{
-    final query1= await connection?.query('''select * from tasadecambio  where iddivisaapkfk='${id}';''');
-    if (query1.isEmpty) {
+    final query= await connection?.query('''select * from tasadecambio  where iddivisaapkfk='${id}';''');
+    if (query.isEmpty) {
       return {'message': 'No hay Tasas de cambio para la divisa',"statusCode":404};
     }
     await connection?.query('''DELETE FROM tasadecambio WHERE iddivisaapkfk='${id}';''');
+    return {'message':"Tasas de cambio eliminadas","statusCode":200};
   }
 
 

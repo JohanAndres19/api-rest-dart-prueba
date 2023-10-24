@@ -44,6 +44,8 @@ Content-Type: application/json
         "valor": 0.31920
     }
 }
+### eliminar tasa de cambio
+DELETE http://localhost:4000/tasacambio/AUD
 
 
 
