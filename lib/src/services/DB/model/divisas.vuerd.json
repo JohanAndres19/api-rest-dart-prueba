@@ -1,0 +1,277 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -748,
+    "scrollLeft": -511,
+    "zoomLevel": 0.8,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "PostgreSQL",
+    "databaseName": "divisas",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Divisa",
+        "comment": "",
+        "columns": [
+          {
+            "name": "IdDivisa",
+            "comment": "",
+            "dataType": "varchar(3)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 61.236328125,
+              "widthDefault": 60
+            },
+            "id": "66c18d85-d532-45b5-b124-977283bed48c"
+          },
+          {
+            "name": "PaisEmisor",
+            "comment": "",
+            "dataType": "varchar(30)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 67.736328125,
+              "widthComment": 60,
+              "widthDataType": 68.46630859375,
+              "widthDefault": 60
+            },
+            "id": "9fb12bb2-6847-4e8f-b73b-95a256ab0d5c"
+          },
+          {
+            "name": "Simbolo",
+            "comment": "",
+            "dataType": "varchar(2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 61.236328125,
+              "widthDefault": 60
+            },
+            "id": "67428b5e-d28e-4f6c-88e7-aad230ffacbd"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 651.75,
+          "top": 710.25,
+          "zIndex": 75,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "740fbf2f-60a3-4971-9a97-dd987a2a2380"
+      },
+      {
+        "name": "TasaDeCambio",
+        "comment": "",
+        "columns": [
+          {
+            "name": "IdDivisaAPKFK",
+            "comment": "",
+            "dataType": "varchar(3)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": true,
+              "widthName": 90.86083984375,
+              "widthComment": 60,
+              "widthDataType": 61.236328125,
+              "widthDefault": 60
+            },
+            "id": "e152f61c-92b0-4004-9f81-9b0bf4939e3f"
+          },
+          {
+            "name": "IdDivisaBPKFK",
+            "comment": "",
+            "dataType": "varchar(3)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": true,
+              "widthName": 90.86083984375,
+              "widthComment": 60,
+              "widthDataType": 61.236328125,
+              "widthDefault": 60
+            },
+            "id": "4f466da4-385b-4c8a-9e37-8d28ade277c4"
+          },
+          {
+            "name": "ValorCambio",
+            "comment": "",
+            "dataType": "double precision ",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 76.1787109375,
+              "widthComment": 60,
+              "widthDataType": 100.287109375,
+              "widthDefault": 60
+            },
+            "id": "347552a9-a584-45df-8c52-dc10c6df4b2e"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 632,
+          "top": 984,
+          "zIndex": 74,
+          "widthName": 90.87353515625,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "79a03395-995c-4aba-be06-a153725a4e2c"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": true,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "740fbf2f-60a3-4971-9a97-dd987a2a2380",
+          "columnIds": [
+            "66c18d85-d532-45b5-b124-977283bed48c"
+          ],
+          "x": 742.5506591796875,
+          "y": 840.75,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "79a03395-995c-4aba-be06-a153725a4e2c",
+          "columnIds": [
+            "e152f61c-92b0-4004-9f81-9b0bf4939e3f"
+          ],
+          "x": 945.6109619140625,
+          "y": 984,
+          "direction": "top"
+        },
+        "constraintName": "fk_divisa_to_tasadecambio",
+        "visible": true,
+        "id": "7deb10a0-f823-446c-9052-a7ef771c5a91"
+      },
+      {
+        "identification": true,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "740fbf2f-60a3-4971-9a97-dd987a2a2380",
+          "columnIds": [
+            "66c18d85-d532-45b5-b124-977283bed48c"
+          ],
+          "x": 924.1519775390625,
+          "y": 840.75,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "79a03395-995c-4aba-be06-a153725a4e2c",
+          "columnIds": [
+            "4f466da4-385b-4c8a-9e37-8d28ade277c4"
+          ],
+          "x": 736.5369873046875,
+          "y": 984,
+          "direction": "top"
+        },
+        "constraintName": "fk_divisa_to_tasadecambio",
+        "visible": true,
+        "id": "69568344-fff8-4a8b-80de-9e49b72f13a3"
+      }
+    ]
+  }
+}

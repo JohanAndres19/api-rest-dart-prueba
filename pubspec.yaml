@@ -1,0 +1,17 @@
+name: divisasback
+description: proyecto de divisas.
+
+environment:
+  sdk: "^3.1.0"
+
+dependencies:
+  angel3_container: ^8.0.0
+  angel3_framework: ^8.1.1
+  belatuk_pretty_logging: ^6.0.0
+  file: ^7.0.0
+  logging: ^1.2.0
+  postgres: ^2.6.3
+  zod_validation: ^1.0.1
+
+dev_dependencies:
+  angel3_hot: ^8.0.0
